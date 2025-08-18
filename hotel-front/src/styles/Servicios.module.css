@@ -1,0 +1,63 @@
+.contenedor{
+   padding: 2rem 0;
+}
+
+.titulo {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.servicios {
+  background-image: url('/images/servicios/servicios-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap; /* opcional si querés que se acomoden en mobile */
+  margin-top: 2rem;
+}
+
+
+.item {
+  text-align: center;
+  width: 170px; /* o el ancho que prefieras */
+  color: #fff;
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.8); /* blanco suave */
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.item:hover .icon {
+  transform: scale(1.3); /* agrandamiento leve */
+}
+
+
+

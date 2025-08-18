@@ -1,0 +1,47 @@
+<div class="container" style="margin:100px 0">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4 class="modificar">Modificar Lugar de Interes</h4>
+            <form action="/admin/lugares/modificar" method="post" 
+            enctype="multipart/form-data">
+                <input type="hidden" value="{{lugar.id}}" name="id">
+                <div class="form-group">
+                    <label for="">Titulo</label>
+                    <input type="text" class="form-control" name="titulo" value="{{lugar.titulo}}">
+                </div>
+                <div class="form-group">
+                    <label for="">Subtitulo</label>
+                    <input type="text" class="form-control" name="subtitulo" value="{{lugar.subtitulo}}">
+                </div>
+                
+                <div class="form-group">
+                    <p>
+                        <label>
+                            Imagen: <input type="file" class="form-control" name="imagen" id="imagen">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" name="img_delete" id="img_delete" value="1">
+                            Eliminar imagen actual? </label>
+                        <input type="hidden" name="img_original" value="{{lugar.img_id}}">
+                        </label>
+                    </p>
+                    
+                </div>
+                
+                <div class="form-group">
+                    <label for="">Cuerpo</label>
+                    <textarea name="cuerpo" class="form-control"> {{lugar.cuerpo}}</textarea>
+                </div>
+                <div class="form-group">
+                    
+                </div>
+                <button type="submit" class="btn btn-secondary">Modificar</button>
+            </form>
+            {{#if error}}
+            <p>{{mensaje}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container" style="margin: 100px auto">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h4>Agregar un Lugar de Interes</h4>
+      <form action="/admin/lugares/agregar" method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+          <input type="text" class="form-control" placeholder="titulo" name="titulo">
+        </div>
+        <div class="row mb-3">
+          <textarea type="text" class="form-control" placeholder="subtitulo" name="subtitulo"></textarea>
+        </div>
+         <div class="row mb-3">
+          <label>Imagen: <input type="file" class="form-control" name="imagen" id="imagen"> </label>
+        </div>
+        <div class="row mb-3">
+          <textarea type="text" class="form-control" placeholder="cuerpo" name="cuerpo"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Guardar</button>
+      </form>
+      {{#if error}}
+      <p>{{mensaje}}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>

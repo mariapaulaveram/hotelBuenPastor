@@ -1,0 +1,21 @@
+.header {
+  background-color: white;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImg {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
