@@ -23,13 +23,13 @@ function Navbar() {
   return (
     <nav className={`${styles.navbar} ${sticky ? styles.fixed : ""}`}>
       <ul className={styles.links}>
-        <li><a href="#hotel">El Hotel</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#habitaciones">Habitaciones</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#promociones">Promociones</a></li>
+        <li><Link to="/#hotel">El Hotel</Link></li>
+        <li><Link to="/#galeria">Galería</Link></li>
+        <li><Link to="/#servicios">Servicios</Link></li>
+        <li><Link to="/#habitaciones">Habitaciones</Link></li>
+        <li><Link to="/#ubicacion">Ubicación</Link></li>
+        <li><Link to="/#contacto">Contacto</Link></li>
+        <li><Link to="/#promociones">Promociones</Link></li>
         <li><Link to="/lugares">Lugares de interés</Link></li>
       </ul>
     </nav>

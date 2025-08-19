@@ -1,4 +1,4 @@
-
+import useScrollToHash from "../hooks/useScrollToHash";
 import styles from "../styles/Home.module.css";
 import HomeCarousel from '../componentes/HomeCarousel';
 import Galeria from "../componentes/Galeria";
@@ -7,6 +7,7 @@ import Ubicacion from '../componentes/Ubicacion';
 import Contacto from "../componentes/Contacto";
 
 const Home = () => {
+  useScrollToHash();
   return (
     <main id="hotel">
       {/* Hero Section */}
