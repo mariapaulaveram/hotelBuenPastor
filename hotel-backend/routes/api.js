@@ -28,6 +28,35 @@ router.get("/lugares", async function (req, res, next) {
   res.json(lugares);
 });
 
+router.get("/lugares/:id", async function (req, res, next) {
+  try {
+    const id = req.params.id;
+    const lugar = await lugaresModel.getLugarById(id); 
+
+    if (!lugar) {
+      return res.status(404).json({ error: "Lugar no encontrado" });
+    }
+
+    // Procesar imagen si existe
+    if (lugar.img_id) {
+      lugar.imagen = cloudinary.url(lugar.img_id, {
+        width: 960,
+        height: 200,
+        crop: "fill",
+      });
+    } else {
+      lugar.imagen = "";
+    }
+
+    res.json(lugar);
+  } catch (error) {
+    console.error("Error al obtener lugar por ID:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
+
+
 router.post("/contacto", async (req, res) => {
   const mail = {
     to: "mpveramorandini@gmail.com",

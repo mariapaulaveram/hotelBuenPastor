@@ -1,23 +1,32 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import Header from "./componentes/layouts/Header";
-import Nav from "./componentes/layouts/Nav";
+import Layout from './componentes/layouts/Layout';
 import Home from './paginas/Home';
 import Lugares from './paginas/Lugares';
-import Footer from "./componentes/layouts/Footer";
+import LugarDetalle from "../src/componentes/lugares/LugarDetalle";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <Router>
-      <Header/>
-      <Nav/>
+      <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="lugares" element={<Lugares/>} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="lugares" element={<Lugares />} />
+          <Route path="/lugares/:id" element={<LugarDetalle />} />
+        </Route>
       </Routes>
-      <Footer/>
     </Router>
   );
 }

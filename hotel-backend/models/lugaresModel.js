@@ -6,6 +6,11 @@ async function getLugares(){
     return rows;
 }
 
+async function getLugarById(id) {
+    var query = 'select * from lugares where id=?';
+    var rows = await pool.query(query, [parseInt(id)]); 
+    return rows[0];
+}
 
 async function insertLugares(obj){
     try{
@@ -24,11 +29,6 @@ async function deleteLugaresById(id) {
     return rows;
 }
 
-async function getLugarById(id) {
-    var query = 'select * from lugares where id=?';
-    var rows = await pool.query(query, [id]);
-    return rows[0];
-}
 
 async function modificarLugaresById(obj, id){
     try {

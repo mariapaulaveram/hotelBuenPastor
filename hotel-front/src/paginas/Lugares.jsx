@@ -1,3 +1,5 @@
+/*COMO VOLVER DESDE ACA A LAS OTRAS PARTES DE LA PAGINA DESDE NAV... */
+/*ver si con useParams se puede abrir cada lugar para mas info... */
 import styles from "../styles/Lugares.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -35,6 +37,7 @@ const Lugares = () => {
                     {lugares.map((item) => (
                         <LugarItem
                             key={item.id}
+                            id={item.id} // ← agregado
                             title={item.titulo}
                             subtitle={item.subtitulo}
                             imagen={item.imagen}
@@ -45,7 +48,6 @@ const Lugares = () => {
             )}
         </section>
     );
-
 };
 
 export default Lugares;

@@ -1,3 +1,4 @@
+
 import styles from "../styles/Home.module.css";
 import HomeCarousel from '../componentes/HomeCarousel';
 import Galeria from "../componentes/Galeria";

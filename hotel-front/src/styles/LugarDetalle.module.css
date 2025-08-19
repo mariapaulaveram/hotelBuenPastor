@@ -1,0 +1,82 @@
+/* LugarDetalle.module.css */
+
+.detalleWrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c2c2c;
+  background-color: #f9f9f9;
+}
+
+.tituloWrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.imagenWrapper {
+  position: relative;
+  width: 100%;
+  max-height: 480px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.imagen {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  z-index: 2;
+  text-align: center;
+}
+
+
+.texto {
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.descripcion {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+  color: #555;
+}
+
+.error {
+  color: #d00000;
+}
+
+
+
