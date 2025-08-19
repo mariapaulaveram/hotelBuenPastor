@@ -44,7 +44,6 @@ const Contacto = () => {
                 <div className={styles.columnaIzquierda}>
                     <div className={styles.form}>
                         <form className={styles.formulario} onSubmit={handleSubmit}>
-                            {/* campos del formulario VER LOGICA PARA QUE FUNCIONE EL ENVIO!!!!! */}
                             <p>
                                 <input
                                     type="text"

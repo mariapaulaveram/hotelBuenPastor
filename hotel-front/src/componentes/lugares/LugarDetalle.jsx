@@ -6,8 +6,8 @@ import styles from "../../styles/LugarDetalle.module.css";
 const LugarDetalle = () => {
   const { id } = useParams();
   const [lugar, setLugar] = useState(null);
-  const [loading, setLoading] = useState(false); // ← agregado
-  const [error, setError] = useState(null); // ← opcional
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const fetchLugar = async () => {
