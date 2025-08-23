@@ -7,7 +7,7 @@ function Navbar() {
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
-    const header = document.querySelector("header"); // más seguro que getElementById
+    const header = document.querySelector("header"); 
 
     const handleScroll = () => {
       if (header) {
