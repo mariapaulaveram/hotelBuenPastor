@@ -39,7 +39,7 @@ const ReservaForm = ({ onClose }) => {
       setTimeout(() => {
         setMensajeEnviado(false);
         onClose(); // Cierra el formulario después de mostrar el mensaje
-      }, 3000);
+      }, 1000);
     } catch (err) {
       console.error("Error al enviar consulta:", err);
     }

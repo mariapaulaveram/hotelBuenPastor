@@ -23,7 +23,7 @@ const Contacto = () => {
         }));
     };
 
-    const handleSubmit = async (e) => {
+    /*const handleSubmit = async (e) => {
         e.preventDefault();
         setMsg("");
         setSending(true);
@@ -36,7 +36,34 @@ const Contacto = () => {
         if (response.data.error === false) {
             setFormData(initialForm);
         }
-    };
+    };*/
+    const handleSubmit = async (e) => {
+  e.preventDefault();
+  setMsg("");
+  setSending(true);
+
+  try {
+    const response = await axios.post("http://localhost:3000/api/contacto", formData);
+    setSending(false);
+    setMsg(response.data.message);
+
+    if (response.data.error === false) {
+      setFormData(initialForm);
+
+      // Ocultar el mensaje después de 1 segundo
+      setTimeout(() => {
+        setMsg("");
+      }, 1000);
+    }
+  } catch (error) {
+    setSending(false);
+    setMsg("Error al enviar el mensaje");
+    setTimeout(() => {
+      setMsg("");
+    }, 3000);
+  }
+};
+
 
     return (
         <div className={styles.holder}>

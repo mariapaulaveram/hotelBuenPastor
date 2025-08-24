@@ -16,6 +16,7 @@ var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/lugares');
 var apiRouter = require('./routes/api');
 var reservaRouter = require("./routes/reserva");
+const contactoRouter = require('./routes/contacto');
 
 var app = express();
 
@@ -59,8 +60,8 @@ app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/lugares',secured, adminRouter);
 app.use('/api', cors(), apiRouter);
-app.use("/api/reserva", reservaRouter);
-
+app.use('/api/reserva', reservaRouter);
+app.use('/api/contacto', contactoRouter);
 
 app.use(cors());
 

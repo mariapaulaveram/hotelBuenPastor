@@ -1,18 +1,12 @@
 // routes/reserva.js
 const express = require("express");
 const router = express.Router();
-const nodemailer = require("nodemailer");
+
 
 router.post("/", async (req, res) => {
   const { nombre, apellido, email, telefono, ingreso, egreso, comentarios } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.MAIL_USER, // ej: reservas.hotel@gmail.com
-      pass: process.env.MAIL_PASS
-    }
-  });
+  const transporter = require("../utils/mailer");
 
   const mailOptions = {
     from: email,

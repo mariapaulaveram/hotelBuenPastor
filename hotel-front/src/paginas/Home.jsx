@@ -17,9 +17,9 @@ const Home = () => {
     <main id="hotel">
       {/* Hero Section */}
        <HomeCarousel />
-      <div className={styles.home}>
+      <div id="reservas" className={styles.home}>
       <section className={styles.hero}>
-        <h1 id="reservas">Un espacio ideado a tu ritmo</h1>
+        <h1>Un espacio ideado a tu ritmo</h1>
         <button  className={styles.cta} onClick={handleOpenForm}>
             Reservá tu estadía
           </button>
