@@ -59,26 +59,37 @@ router.get("/lugares/:id", async function (req, res, next) {
 
 router.post("/contacto", async (req, res) => {
   const mail = {
-    to: "mpveramorandini@gmail.com",
+    from: process.env.MAIL_USER,
+    to: process.env.MAIL_USER,
     subject: "Contacto web",
-    html: `${req.body.nombre} se contactó a traves de la web y quiere más información a este correo: ${req.body.email} <br> Además hizo el siguiente comentario: ${req.body.mensaje} <br> Su teléfono es: ${req.body.telefono}`,
-  };  //alt 96 son las comillas inclinadas-interpolacion de strings
+    html: `${req.body.nombre} se contactó a través de la web y quiere más información a este correo: ${req.body.email} <br> Además hizo el siguiente comentario: ${req.body.mensaje} <br> Su teléfono es: ${req.body.telefono}`,
+  };
 
   const transport = nodemailer.createTransport({
-    host: process.env.SMTP_HOST, //estos datos deben councidir con los de .env
-    port: process.env.SMTP_PORT,
+    service: "gmail",
     auth: {
-      user: process.env.SMTP_USERNAME,
-      pass: process.env.SMTP_PASS,
-    }
+      user: process.env.MAIL_USER,
+      pass: process.env.MAIL_PASS,
+    },
   });
 
-  await transport.sendMail(mail);
-
-  res.status(201).json({
-    error: false,
-    message: "Mensaje enviado",
-  });
+  try {
+    console.log("Enviando mail de contacto a:", mail.to);
+    await transport.sendMail(mail);
+    console.log("Mail enviado correctamente");
+    res.status(201).json({
+      error: false,
+      message: "Mensaje enviado",
+    });
+  } catch (error) {
+    console.error("Error al enviar el mail:", error);
+    res.status(500).json({
+      error: true,
+      message: "No se pudo enviar el mensaje",
+    });
+  }
 });
+
+
 
 module.exports = router;

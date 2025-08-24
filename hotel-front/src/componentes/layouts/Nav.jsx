@@ -26,7 +26,7 @@ function Navbar() {
         <li><Link to="/#hotel">El Hotel</Link></li>
         <li><Link to="/#galeria">Galería</Link></li>
         <li><Link to="/#servicios">Servicios</Link></li>
-        <li><Link to="/#habitaciones">Habitaciones</Link></li>
+        <li><Link to="/#reservas">Reservas</Link></li>
         <li><Link to="/#ubicacion">Ubicación</Link></li>
         <li><Link to="/#contacto">Contacto</Link></li>
         <li><Link to="/#promociones">Promociones</Link></li>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useScrollToHash from "../hooks/useScrollToHash";
 import styles from "../styles/Home.module.css";
 import HomeCarousel from '../componentes/HomeCarousel';
@@ -5,17 +6,24 @@ import Galeria from "../componentes/Galeria";
 import Servicios from "../componentes/Servicios";
 import Ubicacion from '../componentes/Ubicacion';
 import Contacto from "../componentes/Contacto";
+import ReservaForm from '../componentes/ReservaForm';
 
 const Home = () => {
   useScrollToHash();
+  const [showForm, setShowForm] = useState(false);
+  const handleOpenForm = () => setShowForm(true);
+  const handleCloseForm = () => setShowForm(false);
   return (
     <main id="hotel">
       {/* Hero Section */}
        <HomeCarousel />
       <div className={styles.home}>
       <section className={styles.hero}>
-        <h1>Un espacio ideado a tu ritmo</h1>
-        <button className={styles.cta}>Reservá tu estadía</button> /*se abre un formulario de reserva */
+        <h1 id="reservas">Un espacio ideado a tu ritmo</h1>
+        <button  className={styles.cta} onClick={handleOpenForm}>
+            Reservá tu estadía
+          </button>
+        {showForm && <ReservaForm onClose={handleCloseForm} />}
       </section>
 
       {/* Presentación */}

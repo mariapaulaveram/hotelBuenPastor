@@ -103,7 +103,7 @@ const Contacto = () => {
                         <p>Dirección:</p>
                         <p><strong>San Lorenzo 110, Córdoba, Argentina</strong></p>
                         <p>Email:</p>
-                        <p><strong> reservas@hotelbuenpastor.com</strong></p>
+                        <p><strong> buenpastorhotel@gmail.com</strong></p>
                         <p>Teléfono:</p>
                         <p><strong>+54 351 469 8390</strong></p>
                     </div>
