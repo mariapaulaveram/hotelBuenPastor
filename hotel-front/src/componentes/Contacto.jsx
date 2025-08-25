@@ -23,20 +23,6 @@ const Contacto = () => {
         }));
     };
 
-    /*const handleSubmit = async (e) => {
-        e.preventDefault();
-        setMsg("");
-        setSending(true);
-        const response = await axios.post(
-            "http://localhost:3000/api/contacto",
-            formData
-        );
-        setSending(false);
-        setMsg(response.data.message);
-        if (response.data.error === false) {
-            setFormData(initialForm);
-        }
-    };*/
     const handleSubmit = async (e) => {
   e.preventDefault();
   setMsg("");
