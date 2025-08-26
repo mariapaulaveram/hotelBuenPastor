@@ -1,9 +1,9 @@
 import styles from '../styles/Contacto.module.css';
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import axios from "axios";
 
-const Contacto = () => {
-    const initialForm = {
+const Contacto = () => {   
+    const initialForm = { 
         nombre: "",
         apellido: "",
         email: "",
@@ -15,6 +15,7 @@ const Contacto = () => {
     const [msg, setMsg] = useState("");
     const [formData, setFormData] = useState(initialForm);
 
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((oldData) => ({
@@ -23,10 +24,11 @@ const Contacto = () => {
         }));
     };
 
+    
     const handleSubmit = async (e) => {
-  e.preventDefault();
-  setMsg("");
-  setSending(true);
+        e.preventDefault();
+        setMsg("");
+        setSending(true);
 
   try {
     const response = await axios.post("http://localhost:3000/api/contacto", formData);
@@ -36,7 +38,7 @@ const Contacto = () => {
     if (response.data.error === false) {
       setFormData(initialForm);
 
-      // Ocultar el mensaje después de 1 segundo
+      
       setTimeout(() => {
         setMsg("");
       }, 1000);

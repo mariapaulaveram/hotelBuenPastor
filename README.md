@@ -26,7 +26,7 @@ npm run dev
 cd hotel-backend
 npm install
 npm start
-
+```
 
 ## 📦 Dependencias clave
 
