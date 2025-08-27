@@ -27,7 +27,7 @@ Interfaz web desarrollada en React + Vite para el sitio institucional del Hotel 
     ├── index.css            # Estilos globales
     └── index.html           # Entrada HTML para Vite
     
-
+Falta desarrollar promociones que se ve en el nav...
 
 ## ⚙️ Instalación y ejecución 
 cd hotel-front

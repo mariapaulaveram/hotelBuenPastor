@@ -29,7 +29,7 @@ function Navbar() {
         <li><Link to="/#reservas">Reservas</Link></li>
         <li><Link to="/#ubicacion">Ubicación</Link></li>
         <li><Link to="/#contacto">Contacto</Link></li>
-        <li><Link to="/#promociones">Promociones</Link></li>
+        <li><Link to="/#promociones">Promociones</Link></li> 
         <li><Link to="/lugares">Lugares de interés</Link></li>
       </ul>
     </nav>

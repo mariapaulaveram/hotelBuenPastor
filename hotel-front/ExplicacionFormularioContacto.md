@@ -68,32 +68,32 @@ import React, { useState } from "react"; //hook de React para manejar estados lo
 ```
     
    ## ✅ Manejo de respuesta exitosa
-    - Desactiva el estado de envío. Muestra el mensaje de éxito. Si no hay error, reinicia el formulario y oculta el mensaje tras 1 segundo.
-    
-```    setSending(false);
-    setMsg(response.data.message);
+ Desactiva el estado de envío. Muestra el mensaje de éxito recibido desde el backend.
 
-    if (response.data.error === false) {
-      setFormData(initialForm);
+ Si no hay error (error === false), reinicia el formulario al estado inicial.
 
-      // Ocultar el mensaje después de 1 segundo
-      setTimeout(() => {
-        setMsg("");
-      }, 1000);
-    }
+ La lógica de ocultamiento del mensaje se gestiona automáticamente mediante useEffect, según el tipo de respuesta.
+
+```
+setSending(false);
+setMsg(response.data.message);
+
+if (response.data.error === false) {
+  setFormData(initialForm);
+}
 ```
 
-## ❌ Manejo de errores 
-- Captura cualquier error en la petición. Muestra un mensaje de error y lo oculta tras 3 segundos.
+## ❌ Manejo de errores
+Captura cualquier excepción en la petición POST.
 
-```  } catch (error) {
-    setSending(false);
-    setMsg("Error al enviar el mensaje");
-    setTimeout(() => {
-      setMsg("");
-    }, 3000);
-  }
-};
+Muestra un mensaje institucional de error para el usuario.
+
+El mensaje se oculta automáticamente mediante useEffect, sin necesidad de temporizadores manuales.
+
+``` } catch (error) {
+  setSending(false);
+  setMsg("Error al enviar el mensaje");
+}
 ```
 
 ## 🎨 Renderizado del componente
