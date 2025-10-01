@@ -1,8 +1,15 @@
 # Proyecto Institucional - Hotel Buen Pastor
 
-Sistema web institucional que integra frontend en React y backend en Express. Permite reservas, contacto, autenticación y visualización de lugares turísticos.
+Sistema web institucional compuesto por un frontend en React + Vite y un backend en Express. El sitio permite a los visitantes:
 
-Inspirado en el Hotel Buen Pastor, este proyecto busca recrear una experiencia institucional profesional, con énfasis en diseño sobrio, formularios funcionales y autenticación segura.
+- Enviar consultas de reserva mediante un formulario personalizado
+- Realizar contacto directo con el hotel a través de un formulario institucional conectado al backend
+- Explorar una sección de lugares turísticos, cuyos datos se cargan dinámicamente desde el servidor
+- Navegar por una interfaz sobria, clara y adaptada a la identidad institucional del hotel
+
+Además, el sistema incluye un panel de administración con autenticación por sesión, exclusivo para el administrador, quien puede gestionar los contenidos relacionados con los lugares turísticos.
+
+Inspirado en el sitio oficial del Hotel Buen Pastor, este proyecto busca recrear una experiencia profesional y funcional, con énfasis en el diseño, la modularidad del código y la comunicación efectiva entre cliente y servidor.
 
 ---
 
@@ -81,3 +88,8 @@ El sistema incluye dos formularios conectados al backend para enviar correos ins
    - Verificar que las imágenes se muestran correctamente vía Cloudinary  
    - Probar los endpoints `GET /api/lugares` y `GET /api/lugares/:id`
 
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Podés usarlo, modificarlo y distribuirlo libremente, siempre que mantengas los créditos originales.  
+Ver el archivo [LICENSE](./LICENSE) para más detalles.

@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
 
             <div className={styles.footerBottom}>
-                <p>Hotel Buen Pastor – Todos los derechos reservados ©</p>
+                <p>Hotel Buen Pastor – © 2025 María Paula Vera Morandini — Licencia MIT</p>
             </div>
         </footer>
     );
