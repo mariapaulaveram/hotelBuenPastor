@@ -67,7 +67,7 @@ app.use('/api/contacto', contactoRouter);
 app.use(cors());
 app.use(express.static('public'));
 
-// 👉 Y recién acá servís el frontend
+// 👉 Servir el frontend compilado (después de las rutas)
 app.use(express.static(path.join(__dirname, "../hotel-front/dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../hotel-front/dist/index.html"));
