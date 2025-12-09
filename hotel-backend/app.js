@@ -11,6 +11,7 @@ require('dotenv').config();
 var session = require('express-session');
 
 const path = require("path");
+var app = express();
 
 // Servir frontend compilado
 app.use(express.static(path.join(__dirname, "../hotel-front/dist")));
@@ -29,7 +30,7 @@ var apiRouter = require('./routes/api');
 var reservaRouter = require("./routes/reserva");
 const contactoRouter = require('./routes/contacto');
 
-var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
