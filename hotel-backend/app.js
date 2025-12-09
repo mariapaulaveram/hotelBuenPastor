@@ -10,17 +10,7 @@ require('dotenv').config();
 
 var session = require('express-session');
 
-const path = require("path");
 var app = express();
-
-// Servir frontend compilado
-app.use(express.static(path.join(__dirname, "../hotel-front/dist")));
-
-// Fallback: cualquier ruta que no sea API devuelve index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../hotel-front/dist/index.html"));
-});
-
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,8 +19,6 @@ var adminRouter = require('./routes/admin/lugares');
 var apiRouter = require('./routes/api');
 var reservaRouter = require("./routes/reserva");
 const contactoRouter = require('./routes/contacto');
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -67,17 +55,23 @@ app.use(fileUpload({
   tempFileDir:'/tmp/'
 }));
 
+// 👉 Tus rutas primero
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/lugares',secured, adminRouter);
+app.use('/admin/lugares', secured, adminRouter);
 app.use('/api', cors(), apiRouter);
 app.use('/api/reserva', reservaRouter);
 app.use('/api/contacto', contactoRouter);
 
 app.use(cors());
-
 app.use(express.static('public'));
+
+// 👉 Y recién acá servís el frontend
+app.use(express.static(path.join(__dirname, "../hotel-front/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../hotel-front/dist/index.html"));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -86,11 +80,8 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });
