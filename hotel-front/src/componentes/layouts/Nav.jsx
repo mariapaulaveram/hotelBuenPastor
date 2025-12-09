@@ -5,24 +5,26 @@ import styles from "../../styles/Nav.module.css";
 
 function Navbar() {
   const [sticky, setSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const header = document.querySelector("header"); 
-
+    const header = document.querySelector("header");
     const handleScroll = () => {
       if (header) {
         const headerHeight = header.offsetHeight;
         setSticky(window.scrollY > headerHeight);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav className={`${styles.navbar} ${sticky ? styles.fixed : ""}`}>
-      <ul className={styles.links}>
+      <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+      <ul className={`${styles.links} ${menuOpen ? styles.showMenu : ""}`}>
         <li><Link to="/#hotel">El Hotel</Link></li>
         <li><Link to="/#galeria">Galería</Link></li>
         <li><Link to="/#servicios">Servicios</Link></li>
@@ -35,6 +37,7 @@ function Navbar() {
     </nav>
   );
 }
+
 
 export default Navbar;
 

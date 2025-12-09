@@ -19,3 +19,18 @@
   object-fit: contain;
 }
 
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .logoImg {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoImg {
+    width: 100px;
+  }
+}

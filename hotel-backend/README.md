@@ -45,7 +45,7 @@ Reserva	POST /api/reserva	routes/reserva.js	MAIL_USER
 
 
 ## Variables en .env:
-env
+.env
 MAIL_USER=correo@institucional.com
 MAIL_PASS=clave_de_aplicación
 

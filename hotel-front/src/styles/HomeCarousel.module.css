@@ -9,6 +9,7 @@
   left: 0;
 }
 
+
 /* Elimina márgenes y paddings del body y html */
 body, html {
   margin: 0;
@@ -31,3 +32,4 @@ body, html {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+

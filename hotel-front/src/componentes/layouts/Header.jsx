@@ -5,7 +5,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header id="hader" className={styles.header}>
+    <header id="header" className={styles.header}>
       <div className={styles.logo}>
         <Link to="/">
           <img

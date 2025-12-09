@@ -96,10 +96,57 @@ p{
 
 /* Responsive */
 @media (max-width: 768px) {
+  .home {
+    padding: 1rem;
+  }
+
   .hero h1 {
     font-size: 2rem;
+    padding: 0 1rem;
   }
+
   .cta {
+    padding: 0.6rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .presentacion,
+  .confort,
+  .servicios,
+  .ubicacion,
+  .contacto {
+    margin: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .servicios ul {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .cta {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
     font-size: 0.9rem;
   }
 }
+

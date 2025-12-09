@@ -10,6 +10,17 @@ require('dotenv').config();
 
 var session = require('express-session');
 
+const path = require("path");
+
+// Servir frontend compilado
+app.use(express.static(path.join(__dirname, "../hotel-front/dist")));
+
+// Fallback: cualquier ruta que no sea API devuelve index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../hotel-front/dist/index.html"));
+});
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
